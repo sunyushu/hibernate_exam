@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-31 15:30:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hand.spring_hibernate_exam.Customer" table="customer">
+    <meta attribute="class-description">
+         This class contains the employee 	detail. 
+      </meta>
+        <id name="store_id" type="int">
+            <column name="store_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="first_name" type="java.lang.String">
+            <column name="first_name" />
+        </property>
+        <property name="last_name" type="java.lang.String">
+            <column name="last_name" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" />
+        </property>
+        <property name="address_id" type="int">
+            <column name="address_id" />
+        </property>
+        <property name="create_date" type="java.sql.Date">
+            <column name="create_date" />
+        </property>
+        <one-to-one name="store_id" class="com.hand.spring_hibernate_exam.Store" constrained="true"/>
+    </class>
+</hibernate-mapping>

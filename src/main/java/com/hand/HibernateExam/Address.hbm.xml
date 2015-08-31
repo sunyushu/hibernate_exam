@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-31 15:30:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hand.spring_hibernate_exam.Address" table="address">
+        <id name="address_id" type="int">
+            <column name="address_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="address" type="java.lang.String">
+            <column name="address" />
+        </property>
+        <property name="address2" type="java.lang.String">
+            <column name="address2" />
+        </property>
+        <property name="district" type="java.lang.String">
+            <column name="district" />
+        </property>
+        <property name="city_id" type="int">
+            <column name="city_id" />
+        </property>
+        <property name="postal_code" type="java.lang.String">
+            <column name="postal_code" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone" />
+        </property>
+        <property name="last_update" type="java.sql.Date">
+            <column name="last_update" />
+        </property>
+        <one-to-one name="city_id" class="com.hand.spring_hibernate_exam.City" property-ref="address"/>
+    </class>
+</hibernate-mapping>

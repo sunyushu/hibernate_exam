@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-31 15:30:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hand.spring_hibernate_exam.Store" table="store">
+        <id name="store_id" type="int">
+            <column name="store_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="manager_staff_id" type="int">
+            <column name="manager_staff_id" />
+        </property>
+        <property name="address_id" type="int">
+            <column name="address_id" />
+        </property>
+        <property name="last_update" type="java.sql.Date">
+            <column name="last_update" />
+        </property>
+        <one-to-one name="store_id" class="com.hand.spring_hibernate_exam.Customer" property-ref="store"/>
+    </class>
+</hibernate-mapping>
